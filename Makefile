@@ -11,10 +11,10 @@ zip: clean all
 
 player_box_x5: box-player_box_x5 lid-player_box_x5
 resource_box_top_x1: box-resource_box_top_x1 lid-resource_box_top_x1
-resource_box_bottom_x1: box-resource_box_bottom_x1 lid-resource_box_bottom_x1
-player_aid_x1: box-player_aid_x1 lid-player_aid_x1
+resource_box_bottom_x1: box-resource_box_bottom_x1
+player_aid_x1: box-player_aid_x1
 ellipse_x1: box-ellipse_x1 lid-ellipse_x1
-components_x1: box-components_x1 lid-components_x1
+components_x1: box-components_x1
 tokens_x1: box-tokens_x1 lid-tokens_x1
 
 dist: 

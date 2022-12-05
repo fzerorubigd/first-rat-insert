@@ -81,7 +81,7 @@ score_tracks_height = 80;
 card_width = 65;
 card_height = 95;
 
-echo(token_depth);
+echo("\nFirst Rat boardgame insert\nBy Forud Ghafouri");
 data =
 [
     [   "player_box_x5",
