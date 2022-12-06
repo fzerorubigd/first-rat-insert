@@ -72,7 +72,7 @@ resources_depth = box_depth / 2;
 
 components_width = box_width - player_height - player_aid_width;
 components_height = player_aid_height;
-components_depth = 20;
+components_depth = 16;
 token_depth = box_depth - components_depth;
 
 score_tracks_width = 22;
