@@ -1,10 +1,10 @@
 include <bit/boardgame_insert_toolkit_lib.2.scad>;
 
 // determines whether lids are output.
-g_b_print_lid = true;
+g_b_print_lid = t;
 
 // determines whether boxes are output.
-g_b_print_box = true; 
+g_b_print_box = t; 
 
 // Focus on one box
 g_isolated_print_box = ""; 
@@ -60,7 +60,7 @@ player_width = box_height / 5;
 player_height = 60;
 player_depth = box_depth;
 
-player_aid_width = 62;
+player_aid_width = 65;
 player_aid_height = 130;
 player_aid_depth = 14;
 
@@ -70,12 +70,12 @@ resources_width = box_height-player_aid_height;
 resources_height = box_width - player_height;
 resources_depth = box_depth / 2;
 
-components_width = box_height - player_height - player_aid_width;
-components_height = box_width - player_height;
+components_width = box_width - player_height - player_aid_width;
+components_height = player_aid_height;
 components_depth = 20;
 token_depth = box_depth - components_depth;
 
-score_tracks_width = 20;
+score_tracks_width = 22;
 score_tracks_height = 80;
 
 card_width = 65;
@@ -211,15 +211,8 @@ data =
             [ BOX_STACKABLE_B, true], 
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ card_height, score_tracks_width, components_depth -gw2 ] ],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ card_height, components_width-gw2, components_depth-gw ] ],
                     [POSITION_XY, [0,0]],
-                    [CMP_PEDESTAL_BASE_B, t]
-                ]
-            ], 
-            [ BOX_COMPONENT,
-                [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ card_height, components_width-score_tracks_width-gw3, components_depth-gw ] ],
-                    [POSITION_XY, [0,score_tracks_width+gw]],
                 ]
             ],
             [ BOX_COMPONENT,
@@ -238,28 +231,21 @@ data =
             ],
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ (components_height-gw5)/4, (components_width-gw3)/2, components_depth] ],
-                    [ CMP_NUM_COMPARTMENTS_XY, [1, 2] ],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ (components_height-score_tracks_width-gw5)/3, (components_width-gw3)/2, components_depth] ],
+                    [ CMP_NUM_COMPARTMENTS_XY, [2, 2] ],
                     [POSITION_XY, [0,0]],
                 ]
             ], 
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ (components_height-gw5)/4, (components_width-gw3)/2, components_depth] ],
-                    [ CMP_NUM_COMPARTMENTS_XY, [1, 2] ],
-                    [POSITION_XY, [(components_height-gw5)/4+gw,0]],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ (components_height-score_tracks_width-gw5)/3, components_width-gw2, components_depth] ],
+                    [POSITION_XY, [2*((components_height-score_tracks_width-gw5)/3)+gw2,0]],
                 ]
             ], 
             [ BOX_COMPONENT,
                 [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ (components_height-gw5)/4, components_width-gw3, components_depth] ],
-                    [POSITION_XY, [2*((components_height-gw5)/4)+gw2,0]],
-                ]
-            ], 
-            [ BOX_COMPONENT,
-                [
-                    [ CMP_COMPARTMENT_SIZE_XYZ, [ (components_height-gw5)/4, components_width-gw2, components_depth] ],
-                    [POSITION_XY, [3*((components_height-gw5)/4)+gw3,0]],
+                    [ CMP_COMPARTMENT_SIZE_XYZ, [ score_tracks_width, components_width-gw2, components_depth] ],
+                    [POSITION_XY, [3*((components_height-score_tracks_width-gw5)/3)+gw3,0]],
                 ]
             ], 
          ]
